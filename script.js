@@ -530,7 +530,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dataManager = new RealEstateDataManager();
     dataManager.fallbackData = cityData;
 
-    // Add refresh button
+    // Create refresh button
     const refreshButton = document.createElement('button');
     refreshButton.id = 'refresh-btn';
     refreshButton.textContent = '🔄 Refresh Data';
@@ -714,15 +714,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (disclaimerClose) {
         disclaimerClose.addEventListener('click', () => {
             if (disclaimer) {
-                disclaimer.classList.add('hidden');
+                disclaimer.style.display = 'none';
             }
         });
     }
 
     // Auto-hide disclaimer after 10 seconds
     setTimeout(() => {
-        if (disclaimer && !disclaimer.classList.contains('hidden')) {
-            disclaimer.classList.add('hidden');
+        if (disclaimer && disclaimer.style.display !== 'none') {
+            disclaimer.style.display = 'none';
         }
     }, 10000);
 
