@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Prices World Map - Mapbox</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Real Estate Prices World Map</h1>
+    <div class="controls">
+        <input type="text" id="search" placeholder="Search cities...">
+        <select id="country-filter">
+            <option value="">All Countries</option>
+            <option value="United States">United States</option>
+            <option value="Canada">Canada</option>
+            <option value="India">India</option>
+        </select>
+        <div id="data-source-indicator" class="data-source-indicator">
+            <span id="data-source-text">📊 Estimated Data</span>
+        </div>
+    </div>
+    
+    <!-- Disclaimer Section -->
+    <div class="disclaimer">
+        <div class="disclaimer-content">
+            <h3>⚠️ Data Disclaimer</h3>
+            <p>This application displays real estate price estimates for educational and informational purposes only. Prices shown are approximate and may not reflect current market conditions. Always consult with local real estate professionals for accurate pricing information.</p>
+            <p><strong>Data Source:</strong> <span id="data-source">Estimated data based on market trends</span></p>
+            <button id="disclaimer-close">I Understand</button>
+        </div>
+    </div>
+    <div id="map"></div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Real Estate Price Map. Developed by <strong>Chetan Palekar</strong></p>
+            <p>Interactive world map showing real estate prices across major cities in India, United States, and Canada.</p>
+            <div class="developer-info">
+                <p><strong>Developer:</strong> Chetan Palekar</p>
+                <p><strong>Technology Stack:</strong> HTML5, CSS3, JavaScript, Leaflet.js, OpenStreetMap</p>
+                <p><strong>Features:</strong> Multi-currency support, Interactive filtering, Real-time search, Responsive design</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+    <script src="script.js"></script>
+</body>
+</html> 

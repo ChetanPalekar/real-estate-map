@@ -1,0 +1,262 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+    margin: 10px 0;
+    color: #333;
+}
+
+.controls {
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#country-select, #search-input, #style-select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#search-input {
+    min-width: 200px;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+.info.legend {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    line-height: 18px;
+    color: #555;
+}
+
+.info.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+
+/* Legend styling */
+.legend {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.legend h4 {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.legend div {
+    margin: 4px 0;
+    display: flex;
+    align-items: center;
+}
+
+.legend span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 4px rgba(0,0,0,0.3);
+    margin-right: 8px;
+}
+
+/* Popup styling */
+.popup-content {
+    font-family: Arial, sans-serif;
+    line-height: 1.4;
+}
+
+.popup-content h3 {
+    margin: 0 0 8px 0;
+    color: #333;
+    font-size: 16px;
+}
+
+.popup-content p {
+    margin: 4px 0;
+    font-size: 12px;
+}
+
+.popup-content strong {
+    color: #555;
+}
+
+/* Disclaimer styling */
+.disclaimer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.disclaimer-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.disclaimer h3 {
+    color: #e74c3c;
+    margin-bottom: 15px;
+}
+
+.disclaimer p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+#disclaimer-close {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+#disclaimer-close:hover {
+    background: #2980b9;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    padding: 30px 0;
+    margin-top: 20px;
+    border-top: 3px solid #3498db;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.footer-content p {
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+.footer-content strong {
+    color: #3498db;
+}
+
+.developer-info {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border-left: 4px solid #3498db;
+}
+
+.developer-info p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.developer-info strong {
+    color: #f39c12;
+}
+
+/* Data source indicator */
+.data-source-indicator {
+    background: #e3f2fd;
+    border: 1px solid #2196f3;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 11px;
+    color: #1976d2;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.data-source-indicator.real {
+    background: #e8f5e8;
+    border-color: #4caf50;
+    color: #2e7d32;
+}
+
+.data-source-indicator.estimated {
+    background: #fff3e0;
+    border-color: #ff9800;
+    color: #e65100;
+}
+
+/* Data source info in popup */
+.data-source {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid #eee;
+}
+
+/* Refresh button styling */
+.refresh-btn {
+    padding: 8px 12px;
+    margin-left: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #f8f9fa;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.2s;
+}
+
+.refresh-btn:hover {
+    background: #e9ecef;
+}
+
+.refresh-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
