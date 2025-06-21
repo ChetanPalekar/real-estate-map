@@ -11,15 +11,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Real Estate Prices World Map</h1>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1>🏠 Real Estate Prices World Map</h1>
+            <p>Interactive map showing real estate prices across major cities</p>
+            <p class="developer-credit">Developed by Chetan Palekar</p>
+        </div>
+    </header>
+
     <div class="controls">
-        <input type="text" id="search" placeholder="Search cities...">
-        <select id="country-filter">
-            <option value="">All Countries</option>
-            <option value="United States">United States</option>
-            <option value="Canada">Canada</option>
-            <option value="India">India</option>
-        </select>
+        <div class="control-group">
+            <label for="search">Search Cities:</label>
+            <input type="text" id="search" placeholder="Search cities...">
+        </div>
+        <div class="control-group">
+            <label for="country-filter">Filter by Country:</label>
+            <select id="country-filter">
+                <option value="">All Countries</option>
+                <option value="United States">United States</option>
+                <option value="Canada">Canada</option>
+                <option value="India">India</option>
+            </select>
+        </div>
         <div id="data-source-indicator" class="data-source-indicator">
             <span id="data-source-text">📊 Estimated Data</span>
         </div>
@@ -34,6 +48,7 @@
             <button id="disclaimer-close">I Understand</button>
         </div>
     </div>
+    
     <div id="map"></div>
 
     <footer class="footer">
